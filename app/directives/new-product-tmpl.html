@@ -1,0 +1,77 @@
+﻿<div class="modal-header">
+    <h5 class="m0 text-thin modal-title">New Product</h5>
+</div>
+<div class="col-xs-12 modal-body" style="color:#4F5256">
+    <div class="col-xs-6">
+        <label for="product.Name" class="m0 text-thin col-xs-12">Name: </label>
+        <input ng-model="product.Name" class="form-control input-sm" placeholder="Product Name" />
+        <br />
+    </div>
+    <div class="col-xs-6">
+        <label for="product.Cost" class="m0 text-thin col-xs-12">Cost: </label>
+        <input ng-model="product.Cost" class="form-control input-sm" type="number" placeholder="Product Cost" />
+        <br />
+    </div>
+    <div class="col-xs-6">
+        <label for="product.CompanyId" class="m0 text-thin col-xs-12">Company: </label>
+        <select class="form-control input-sm" ng-options="company.Name for company in companies" ng-model="product.CompanyId"></select>
+ <br />
+    </div>
+    <div class="col-xs-6">
+        <label for="product.ProductCategoryId" class="m0 text-thin col-xs-12">Product Category: </label>
+        <input ng-model="product.ProductCategoryId" class="form-control input-sm" type="number" placeholder="Product Category" />
+        <br />
+    </div>
+    <div class="col-xs-6">
+        <label for="product.SalesPrice" class="m0 text-thin col-xs-12">Product Sales Price: </label>
+        <input ng-model="product.SalesPrice" class="form-control input-sm" type="number" placeholder="Product Sales Price" />
+        <br />
+    </div>
+    <div class="col-xs-6">
+        <label for="product.LeadTime" class="m0 text-thin col-xs-12">Lead Time: </label>
+        <input ng-model="product.LeadTime" class="form-control input-sm" placeholder="Product Lead Time" />
+        <br />
+    </div>
+    <div class="col-xs-6">
+        <label for="product.Size" class="m0 text-thin col-xs-12">Size: </label>
+        <input ng-model="product.Size" class="form-control input-sm" placeholder="Product Size" />
+        <br />
+    </div>
+    <div class="col-xs-6">
+        <label for="product.SKU" class="m0 text-thin col-xs-12">SKU: </label>
+        <input ng-model="product.SKU" class="form-control input-sm" placeholder="Product SKU" />
+        <br />
+    </div>
+    <div class="col-xs-6">
+        <label for="product.Region" class="m0 text-thin col-xs-12">Region: </label>
+        <input ng-model="product.Region" class="form-control input-sm" placeholder="Product Region" />
+        <br />
+    </div>
+    <div class="col-xs-12" style="padding:5px 0px;">
+        <label for="product.size" class="m0 text-thin col-xs-12" ng-click="test()">Components: </label>
+        <!--<select class="form-control input-sm" ng-options="component as component.id for component in components" ng-model="selectedComponent"></select>-->
+        <button type="button" class="input-sm btn btn-labeled btn-success ripple text-right pull-right" ng-click="addExistingProductComponent();">
+            Add Component<span class="btn btn-label btn-label-right">
+                <i class="ion-plus-round"></i>
+            </span>
+        </button>
+    </div>
+
+    <!--<select class="form-control input-sm" ng-options="component as component.Name for component in components" ng-model="selectedComponent"></select>-->
+    <br />
+    <div class="col-xs-12" ng-repeat="comp in productComponents">
+        <div class="col-xs-4">
+            <select class="form-control input-sm" ng-options="c as c.Name for c in components" ng-change="newCompCheck(comp.component.Name)" ng-model="comp.component" placeholder="Component - e.g. ketchup"></select>
+        </div>
+        <div class="col-xs-4">
+            <input ng-model="comp.required" class="form-control input-sm" type="number" placeholder="Required - e.g. 2" min="0" />
+        </div>
+        <div class="col-xs-4">
+            <input ng-model="comp.units" class="form-control input-sm" type="text" placeholder="Component Unit - e.g. ml" />
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="add()">Add</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

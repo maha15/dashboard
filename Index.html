@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="nuage">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>{{state |capitalize}}</title>
+
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="css/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
+    <!--<link href="css/vendor.css" rel="stylesheet" />-->
+    <link href="css/app.css" rel="stylesheet" />
+    <link href="css/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+    <!--<link href="css/libraries.css" rel="stylesheet" />-->
+    <!--<link href="css/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />-->
+    <!--<link href="lib/bootstrap-table/bootstrap-table.css" rel="stylesheet" />-->
+    <link href="lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="lib/zabuto-calender/zabuto_calendar.min.css" rel="stylesheet" />
+    <link href="css/isteven-multi-select.css" rel="stylesheet" />
+    <!--<link rel="shortcut icon" href="images/ico/favicon.ico">-->
+    <link rel="styleSheet" href="node_modules/angular-ui-grid/ui-grid.min.css" />
+    <link rel="styleSheet" href="css/custom.css" />
+
+
+
+</head><!--/head-->
+<body class="theme-1">
+    <!--<div data-preloader="" class="preloader preloader-hidden" style="">
+        <div class="preloader-progress">
+            <div class="preloader-progress-bar" ng-style="{width: loadCounter + '%'}" style="width: 100%;"></div>
+        </div>
+    </div>-->
+    <!-- uiView: -->
+    <div data-autoscroll="false" data-ng-class="layout()" class="layout-container sidebar-offcanvas" style="" ng-controller="appController">
+        <header class="header-container">
+            <!--ng-include="'app/views/header.tpl.html'"-->
+            <nav class="navbar navbar-default-top bg-primary" style="margin-bottom:0px;">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="glyphicon glyphicon-menu-hamburger"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <h4 class="m0 text-thin text-white">Nuage Pulse</h4>
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse" ng-if="!state.$current.hideNavbar">
+                    <ul class="nav navbar-nav navbar-right" style="align-content:center">
+                        <li class="dropdown">
+                            <a ui-sref="dashboard">
+                                <span class="glyphicon glyphicon-th icon-th text-white"></span>
+                                <span class="text-white">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a ui-sref="company.create">
+                                <span class="glyphicon glyphicon-cog text-white"></span>
+                                <span class="text-white">  Company</span>
+                            </a>
+                        </li>
+                        <li uib-dropdown="" class="dropdown">
+                            <a href="" uib-dropdown-toggle="" class="dropdown-toggle has-badge ripple" aria-haspopup="true" aria-expanded="false">
+                                <span class="glyphicon glyphicon-user text-white"></span>
+                                <span class="text-white">    User</span>
+                            </a>
+                            <ul dropdown-menu="" class="dropdown-menu dropdown-menu-right sm-dropdown-menu">
+                                <li class="ripple ripple-block"><a ui-sref="user.profile"><em class="ion-home icon-fw"></em>Profile</a><span class="md-ripple"></span></li>
+                                <li class="ripple ripple-block"><a ui-sref="user.requests"><em class="ion-gear-a icon-fw"></em>Requests</a><span class="md-ripple"></span></li>
+                                <li role="presentation" class="divider"></li>
+                                <li class="ripple ripple-block"><a ui-sref="logout"><em class="ion-log-out icon-fw"></em>Logout</a><span class="md-ripple"></span></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+            </nav>
+        </header>
+        <!-- sidebar-->
+        <!-- Main section-->
+        <main>
+            <!-- Page content-->
+            <!-- uiView: -->
+            <div ui-view></div>
+            <div alertslist message="alertMessage"> </div>
+
+            <footer style="clear:both;"><span>2017 - Nuage Pulse.</span></footer>
+        </main>
+    </div>
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-ui-router.min.js"></script>
+    <!--  <script src="js/echarts-all.js"></script>-->
+    <script src="js/echarts-all-3.js"></script>
+    <script src="lib/file upload/ng-file-upload-shim.js"></script>
+    <script src="lib/file upload/ng-file-upload.js"></script>
+
+    <script src="app/app.js"></script>
+
+    <!--login-->
+    <script src="app/login/login-factory.js"></script>
+    <script src="app/login/login-directives.js"></script>
+    <script src="app/login/login-controller.js"></script>
+
+    <script src="app/logout/logout-controller.js"></script>
+
+    <!--signup-->
+    <script src="app/signup/signup-controller.js"></script>
+    <script src="app/signup/signup-services.js"></script>
+    <script src="app/signup/signup-directives.js"></script>
+
+    <!--dashboard-->
+    <script src="app/dashboard/dashboard-controller.js"></script>
+    <!--revenue-->
+    <script src="app/dashboard/revenue/revenue-directives.js"></script>
+    <script src="app/dashboard/revenue/revenue-services.js"></script>
+    <!--cost-->
+    <script src="app/dashboard/cost/cost-directives.js"></script>
+    <script src="app/dashboard/cost/cost-services.js"></script>
+    <!--cashflow-->
+    <script src="app/dashboard/cashflow/cashflow-directives.js"></script>
+    <script src="app/dashboard/cashflow/cashflow-services.js"></script>
+
+    <!--cashflow-->
+    <script src="app/dashboard/eventcalendar/eventcalendar-directive.js"></script>
+    <script src="app/dashboard/eventcalendar/eventcalendar-services.js"></script>
+
+
+    <!--inventory-->
+    <script src="app/inventory/inventory-directives.js"></script>
+    <script src="app/inventory/inventory-controller.js"></script>
+    <script src="app/inventory/inventory-services.js"></script>
+
+    <!--company-->
+    <script src="app/company/company-controller.js"></script>
+    <script src="app/company/admin/adminCompany-controller.js"></script>
+    <script src="app/company/create/createCompany-controller.js"></script>
+    <script src="app/company/role/roleCompany-controller.js"></script>
+    <script src="app/company/roles/rolesCompany-controller.js"></script>
+    <script src="app/company/company-services.js"></script>
+
+    <!--user-->
+    <script src="app/user/user-controller.js"></script>
+    <script src="app/user/requests/requestsUser-controller.js"></script>
+    <script src="app/user/profile/profileUser-controller.js"></script>
+
+    <!--factories-->
+    <script src="app/factories/auth.js"></script>
+    <script src="app/factories/constants.js"></script>
+    <script src="app/factories/interceptors.js"></script>
+
+    <!--controllers-->
+    <script src="app/app-controller.js"></script>
+
+    <!--directives-->
+    <script src="app/directives/password-manager.js"></script>
+    <script src="app/directives/directives.js"></script>
+    <script src="app/directives/dashboard-directives.js"></script>
+    <script src="app/directives/alert-messages.js"></script>
+
+    <!--services-->
+    <script src="app/services/session.js"></script>
+    <script src="app/services/alert-messages.js"></script>
+
+    <!--data-->
+    <script src="app/services/app-services-data-main.js"></script>
+    <!--format-->
+    <script src="app/services/app-services-format-main.js"></script>
+
+    <!--<script src="lib/multiselect/angular-bootstrap-multiselect-templates.js"></script>
+    <script src="lib/multiselect/angular-bootstrap-multiselect.js"></script>-->
+    <script src="lib/multiselect/isteven-multi-select.js"></script>
+    <!--<script src="lib/multiselect/angular-bootstrap-multiselect.min.js"></script>-->
+    <!--table-->
+    <script src="lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="css/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="lib/bootstrap-table/bootstrap-table-editable.js"></script>
+    <script src="lib/bootstrap-table/rawgit.js"></script>
+    <script src="lib/zabuto-calender/zabuto_calendar.min.js"></script>
+    <script src="node_modules/angular-ui-grid/ui-grid.min.js"></script>
+    <script src="js/daypilot-all.min.js"></script>
+
+    <script src="lib/underscore.js"></script>
+
+    <!--<iframe src="sink.html" name="sink"
+            style="display:none"></iframe>
+    <form name="loginForm"
+          action="sink.html" target="sink" method="post"
+          ng-controller="LoginController"
+          ng-submit="login(credentials)"
+          novalidate form-autofill-fix>
+        <label for="username">Username:</label>
+        <input type="text" id="username"
+               ng-model="credentials.username">
+        <label for="password">Password:</label>
+        <input type="password" id="password"
+               ng-model="credentials.password">
+        <button type="submit">Login</button>
+    </form>-->
+
+</body>
+</html>

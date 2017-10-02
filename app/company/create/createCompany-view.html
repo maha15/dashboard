@@ -1,0 +1,62 @@
+﻿<div class="col-xs-9">
+    <form name="companyForm" action="sink.html" target="sink" method="post"
+          ng-submit="createCompany()" form-autofill-fix novalidate>
+        <!-- NAME -->
+        <div class="form-group" ng-class="{ 'has-error' : companyForm.Name.$invalid && !companyForm.Name.$pristine }">
+            <label class="text-thin">Company Name*</label>
+            <input type="text" name="name" class="form-control" ng-model="company.Name" required="">
+            <p ng-show="companyForm.Name.$invalid && !companyForm.Name.$pristine" class="help-block">Enter a company.</p>
+        </div>
+
+        <!-- ADDRESS -->
+        <div class="form-group" ng-class="{ 'has-error' : companyForm.address.$invalid && !companyForm.address.$pristine }">
+            <label class="text-thin">Company Name*</label>
+            <input type="text" name="address" class="form-control" ng-model="company.address" required="">
+            <p ng-show="companyForm.address.$invalid && !companyForm.address.$pristine" class="help-block">Enter an address.</p>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <!-- Tax Ref. Number -->
+                <div class="form-group" ng-class="{ 'has-error' : companyForm.TaxRefNo.$invalid && !companyForm.TaxRefNo.$pristine }">
+                    <label class="text-thin">Tax Ref. Number*</label>
+                    <input type="text" class="form-control" ng-model="company.TaxRefNo" placeholder="" required="" />
+                    <p ng-show="companyForm.TaxRefNo.$invalid && !companyForm.TaxRefNo.$pristine" class="help-block">Enter company's tax ref. number.</p>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <!-- Sales Tax Number -->
+                <div class="form-group" ng-class="{ 'has-error' : companyForm.SalesTaxNo.$invalid && !companyForm.SalesTaxNo.$pristine }">
+                    <label class="text-thin">Sales Tax Number*</label>
+                    <input type="text" class="form-control" ng-model="company.SalesTaxNo" placeholder="" required="" />
+                    <p ng-show="companyForm.SalesTaxNo.$invalid && !companyForm.SalesTaxNo.$pristine" class="help-block">Enter company's sales tax number.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <!-- Payrol Ref. Number -->
+                <div class="form-group" ng-class="{ 'has-error' : companyForm.PayrolRefNo.$invalid && !companyForm.PayrolRefNo.$pristine }">
+                    <label class="text-thin">Payrol Ref. Number*</label>
+                    <input type="text" class="form-control" ng-model="company.PayrolRefNo" placeholder="" required="" />
+                    <p ng-show="companyForm.PayrolRefNo.$invalid && !companyForm.PayrolRefNo.$pristine" class="help-block">Enter payrol ref. number.</p>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <!-- No. Of Employees -->
+                <div class="form-group" ng-class="{ 'has-error' : companyForm.NoOfEmp.$invalid && !companyForm.NoOfEmp.$pristine }">
+                    <label class="text-thin">No. Of Employees*</label>
+                    <input type="text" class="form-control" ng-model="company.NoOfEmp" placeholder="" required="" />
+                    <p ng-show="companyForm.NoOfEmp.$invalid && !companyForm.NoOfEmp.$pristine" class="help-block">Enter no of employees.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4 col-sm-3">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Create</button>
+                    <span class="text-danger">{{ companyError }}</span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

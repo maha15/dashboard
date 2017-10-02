@@ -1,0 +1,58 @@
+﻿
+.app-modal-window .modal-dialog {
+    width: 1200px;
+}
+
+.disabledCell {
+    background-color: whitesmoke !important;
+    border-bottom: 1px solid gainsboro;
+}
+
+.editableCell {
+    background-color: white !important;
+    border-bottom: 1px solid gainsboro;
+}
+
+.disabledCellAR {
+    color: lawngreen;
+    background-color: whitesmoke !important;
+    border-bottom: 1px solid gainsboro;
+}
+
+.disabledCellAP {
+    color: red;
+    background-color: whitesmoke !important;
+    border-bottom: 1px solid gainsboro;
+}
+
+
+.editable-input {
+    float: left;
+    width: 60%;
+}
+
+    .editable-input input[type="text"] {
+        width: 100%;
+    }
+
+.editable-buttons {
+    float: right;
+}
+
+.alertsList {
+    /*background-color: grey;*/
+    width: 30%;
+    padding: 5px;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    overflow-x: hidden;
+    z-index: 2000;
+    opacity: 0.8;
+    /* overflow-y: auto; */
+    /* max-height: 30%; */
+}
+
+.calendar_default_corner div:nth-of-type(2) {
+    display: none !important;
+}

@@ -1,0 +1,46 @@
+<div autoscroll="false" ng-init="init();">
+    <div class="content-heading bg-white dash-heading">
+        <div class="row">
+            <div class="col-xs-6 col-sm-7 col-md-8">
+                <h4 class="m0 text-thin">Dashboard</h4>
+                <!--<small ng-if="currentUser">Welcome, {{ currentUser.FirstName }}</small>-->
+                <!--<multiselect name="Companies" id-prop="company_id" display-prop="name" show-select-all="true" show-unselect-all="true" show-search="true" ng-model="selectedCompanies" options="companies"></multiselect>-->
+            </div>
+            <div class="col-xs-6 col-sm-5 col-md-4">
+                <div isteven-multi-select
+                     control-name="Companies"
+                     input-model="companies"
+                     output-model="filteredCompanies"
+                     button-label="Name"
+                     item-label="Name"
+                     tick-property="ticked">
+                </div>
+            </div>
+            <!--<div class="col-sm-3 col-md-2 hidden-xs">
+                <button type="button" class="btn btn-labeled btn-default ripple text-right" ng-click="clickftn();">
+                    Company<span class="btn btn-label btn-label-right">
+                        <i class="ion-plus-round"></i>
+                    </span>
+                    <span class="md-ripple" style="width: 0px; height: 0px; margin-top: -35px; margin-left: -35px;">
+                    </span>
+                </button>
+            </div>-->
+        </div>
+    </div>
+    <div>
+        <revenue-directive></revenue-directive>
+        <cost-directive></cost-directive>
+        <cashflow-directive></cashflow-directive>
+        <eventcalendar-directive></eventcalendar-directive>
+        <!--<div class="row dash-section">
+            <div class="col-xs-12">
+                <div class="row dash-heading">
+                    <div class="col-sm-3 col-xs-12"><h4 class="m0 text-thin">Event Calender</h4></div>
+                </div>
+                <div class="row dash-heading">
+                    <event-calander id='calendar'></event-calander>
+                </div>
+            </div>
+        </div>-->
+    </div>
+</div>

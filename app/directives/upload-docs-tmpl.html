@@ -1,0 +1,28 @@
+﻿<div class="modal-header">
+    <h5 class="modal-title text-center block bg-primary" style="padding:10px;">Upload Document</h5>
+</div>
+<div class="modal-body">
+    <form name="myForm" class="form-horizontal"></form>
+    <button ngf-select="uploadFiles($files)" multiple
+            accept="image/*">
+        Select Files
+    </button>
+    <br>
+    <div ng-if="files">
+    <br>Files:
+    <ul>
+        <li ng-repeat="f in files" style="font:smaller">
+            {{f.name}}
+        </li>
+    </ul></div>
+    <span class="progress" ng-show="progress >= 0">
+        <div style="width:{{progress}}%" ng-bind="progress + '%'"></div>
+    </span>
+    {{errorMsg}}
+</div>
+<div class="modal-footer">
+    <div class="pull-right">
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        <button class="btn btn-success" ng-click="add()">Add</button>
+    </div>
+</div>

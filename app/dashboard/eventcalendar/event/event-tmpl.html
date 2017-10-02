@@ -1,0 +1,38 @@
+﻿<div class="modal-header">
+    <h5 class="modal-title text-center block bg-primary" style="padding:10px;"> Event </h5>
+</div>
+
+<form name="myForm" class="form-horizontal">
+	<div class="modal-body">
+		<div class="col-xs-12">
+			<div>
+		 		<div class="col-md-5 col-sm-5 col-xs-12"> Name: </div>        
+		 		<div class="col-md-7 col-sm-7 col-xs-12"> <input type="text" name="name" ng-model = "name">  </div>
+			</div>
+			<br>
+			<div>
+				<div class="col-md-5 col-sm-5 col-xs-12">Description:</div>
+				<div class="col-md-7 col-sm-7 col-xs-12"><input type="text" name="description" ng-model = "description"></div>
+			</div>
+			<br>
+			<div>
+				<div class="col-md-5 col-sm-5 col-xs-12">Start Date:</div>
+				<div class="col-md-7 col-sm-7 col-xs-12"><input type="datetime-local" name="startDate" ng-model = "startDate" ></div>
+			</div>
+			<br>
+			<div>
+				<div class="col-md-5 col-sm-5 col-xs-12"> End Date: </div>
+				<div class="col-md-7 col-sm-7 col-xs-12"><input type="datetime-local" name="endDate" ng-model = "endDate"></div>
+			</div>
+			<br>
+	    </div>	
+	    <br>
+	   
+	</div>
+	<div class="modal-footer">
+	    <div class="pull-right">
+	        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+	        <button class="btn btn-success" ng-click="add()">Add</button>
+	    </div>
+	</div>
+</form>

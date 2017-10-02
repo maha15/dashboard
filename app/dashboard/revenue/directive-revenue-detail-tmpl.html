@@ -1,0 +1,50 @@
+﻿<!--<div autoscroll="false" class=" ng-fadeInLeftShort">
+    <div class="content-heading bg-black ">
+        <div class="row">
+            <div class="col-xs-9">
+                <h4 class="m0 text-thin">Year 2016</h4>
+            </div>
+        </div>
+    </div>-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 col-xs-12">
+            <div class="card" style="padding:5px;">
+                <div dash-chart options="barChartOptions" theme="blue" style="width: 100%; min-height: 250px"></div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <div class="card">
+                <div dash-chart options="lineChartOptions" theme="macarons" style="width: 100%;height:250px;"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+
+        <div ng-repeat="sum in summary" class="col-sm-2 col-xs-4" style="padding:5px;">
+            <div class="card">
+                <div class="card-body pv">
+                    <div class="clearfix">
+                        <div class="text-center">
+                            <h4 class="m0 text-thin">{{sum.value}}</h4><small class="m0 text-muted">
+                                <!--<em class="mr-sm ion-arrow-up-b"></em>-->{{sum.name| uppercase}}
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <bootstrap-table class="table table-responsive" data="data" headings="headings" style="width:100%">
+                </bootstrap-table>
+            </div>
+        </div>
+    </div>
+</div>
+<!--</div>-->

@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Nuage-cuesol-app", ".", "{A30B4647-DC9F-42AA-A609-53A0DBDE0EBF}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_56162"
+		Debug.AspNetCompiler.PhysicalPath = "..\Nuage-cuesol-app\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56162\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_56162"
+		Release.AspNetCompiler.PhysicalPath = "..\Nuage-cuesol-app\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56162\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "56162"
+		SlnRelativePath = "..\Nuage-cuesol-app\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A30B4647-DC9F-42AA-A609-53A0DBDE0EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A30B4647-DC9F-42AA-A609-53A0DBDE0EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

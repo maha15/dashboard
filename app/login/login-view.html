@@ -1,0 +1,41 @@
+﻿<!--<form name="loginForm" ng-controller="LoginController"
+      ng-submit="login(credentials)" novalidate>-->
+<!--justify-content-center-->
+<div ng-controller="LoginController" class="container-fluid" style="min-height: calc(100% - 30px)">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <h4 class="text-thin">LogIn</h4>
+        <div class="col-sm-10 col-xs-12">
+            <form name="loginForm" class="form-horizontal" action="sink.html" target="sink" method="post"
+                  ng-submit="login(credentials)" form-autofill-fix novalidate>
+                <div class="form-group" ng-class="{ 'has-error' : loginForm.UserName.$invalid && !loginForm.UserName.$pristine }">
+                    <label class="text-thin col-xs-4">Username</label>
+                    <div class="col-xs-8">
+                        <input type="text" class="form-control" name="UserName" ng-model="credentials.UserName" placeholder="UserName" required="" />
+                        <p ng-show="loginForm.UserName.$invalid && !loginForm.UserName.$pristine" class="help-block">UserName is required.</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="text-thin col-xs-4">Password</label>
+                    <div class="col-xs-8">
+                        <input type="password" class="form-control" name="Password" ng-model="credentials.Password" placeholder="Password" required="" />
+                        <p ng-show="loginForm.Password.$invalid && !loginForm.Password.$pristine" class="help-block">Password is required.</p>
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <div class="col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-4 block">
+                        <span class="text-danger block">{{ loginError }}</span><br />
+                        <button type="submit" class="btn btn-success btn-block" ng-disabled="!loginForm.$valid">Login</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-8 col-md-offset-4 col-sm-6 col-xs-offset-4 col-sm-offset-2">
+                        <a class="block" ng-click="register();">   Register as a new user?</a>
+                        <a class="block"> Forgot your password?</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

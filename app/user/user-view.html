@@ -1,0 +1,18 @@
+﻿<div autoscroll="false" ng-init="init();">
+    <div class="content-heading bg-white dash-heading">
+        <div class="row">
+            <div class="col-xs-7">
+                <h4 class="m0 text-thin">User</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row dash-section">
+        <ul style="font-size: 14px; margin-top: 0px; padding: 0px; " class="nav nav-tabs btn-sm" id="myGridTab">
+            <li ng-class="{active: var.activeTab == 'requests'}" ng-click="onTabClick('requests')"><a ui-sref="user.requests" data-toggle="tab">Role Requests</a></li>
+            <li ng-class="{active: var.activeTab == 'profile'}" ng-click="onTabClick('profile')"><a ui-sref="user.profile" data-toggle="tab">User Profile</a></li>
+        </ul>
+        <div class="tab-content">
+            <div ui-view></div>
+        </div>
+    </div>
+</div>

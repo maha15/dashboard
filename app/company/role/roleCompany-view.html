@@ -1,0 +1,50 @@
+﻿<div class="col-xs-9" ng-init="init()">
+    <form name="roleForm" action="sink.html" target="sink" method="post"
+          ng-submit="requestRole(role)" form-autofill-fix novalidate>
+        <!-- NAME -->
+        <div class="form-group" ng-class="{ 'has-error' : roleForm.CompanyId.$invalid && !roleForm.CompanyId.$pristine }">
+            <label class="text-thin">Company*</label>
+            <select class="form-control input-sm" ng-options="company.CompanyId as company.Name for company in companies" ng-model="role.CompanyId" required=""></select>
+            <p ng-show="roleForm.CompanyId.$invalid && !roleForm.CompanyId.$pristine" class="help-block">Enter a company.</p>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error' : roleForm.Email.$invalid && !roleForm.Email.$pristine }">
+            <label class="text-thin">Email*</label>
+            <input type="email" name="email" class="form-control" ng-model="role.Email" required="">
+            <p ng-show="roleForm.Email.$invalid && !roleForm.Email.$pristine" class="help-block">Enter a valid email.</p>
+        </div>
+
+        <!-- ADDRESS -->
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="form-group" ng-class="{ 'has-error' : roleForm.company.$invalid && !roleForm.company.$pristine }">
+                    <label class="text-thin">Role*</label>
+                    <dropdown-multiselect model="selectedRoles" options="roles"></dropdown-multiselect>
+                    <!--<div isteven-multi-select
+                         control-name="Roles"
+                         input-model="roles"
+                         output-model="selectedRoles"
+                         button-label="Name"
+                         item-label="Name"
+                         tick-property="ticked">
+                    </div>-->
+                    <p ng-show="roleForm.role.$invalid && !roleForm.role.$pristine" class="help-block">Enter a company.</p>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label class="text-thin">Contact Number</label>
+                    <input type="text" class="form-control" ng-model="role.ContactNumber" placeholder="" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4 col-sm-3">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-block">Submit</button>
+                    <span class="text-danger">{{ roleError }}</span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

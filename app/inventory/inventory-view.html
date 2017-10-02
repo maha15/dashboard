@@ -1,0 +1,23 @@
+﻿
+<inventory-directive></inventory-directive>
+<div autoscroll="false" ng-init="init();">
+    <div class="content-heading bg-white dash-heading">
+        <div class="row">
+            <div class="col-xs-7">
+                <h4 class="m0 text-thin">Company</h4>
+                <!--<multiselect name="Companies" id-prop="company_id" display-prop="name" show-select-all="true" show-unselect-all="true" show-search="true" ng-model="selectedCompanies" options="companies"></multiselect>-->
+            </div>
+        </div>
+    </div>
+    <div class="row dash-section">
+        <ul style="font-size: 14px; margin-top: 0px; padding: 0px; " class="nav nav-tabs btn-sm" id="myGridTab">
+            <li ng-class="{active: var.activeTab == 'create'}" ng-click="onTabClick('create')"><a ui-sref="company.create" data-toggle="tab">Create Company</a></li>
+            <li ng-class="{active: var.activeTab == 'admin'}" ng-click="onTabClick('admin')"><a ui-sref="company.admin" data-toggle="tab">Admin of Companies</a></li>
+            <li ng-class="{active: var.activeTab == 'role'}" ng-click="onTabClick('role')"><a ui-sref="company.role" data-toggle="tab">Request Role</a></li>
+            <li ng-class="{active: var.activeTab == 'roles'}" ng-click="onTabClick('roles')"><a ui-sref="company.roles" data-toggle="tab">Role Registrations</a></li>
+        </ul>
+        <div class="tab-content">
+            <div ui-view></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+﻿<div class="col-xs-12 col-sm-8 col-sm-offset-2" ng-controller="SignUpController">
+    <h4 class="text-thin">Create a Pulse Account</h4>
+    <div class="col-xs-12">
+        <form name="signUpForm" class="form-horizontal" action="sink.html" target="sink" method="post"
+              ng-submit="signup(register)" form-autofill-fix novalidate>
+            <!-- Email -->
+            <div class="form-group" ng-class="{ 'has-error' : signUpForm.Email.$invalid && !signUpForm.Email.$pristine }">
+                <label class="text-thin col-xs-5 col-sm-4">Email *</label>
+                <div class="col-sm-8 col-xs-7">
+                    <input type="email" name="Email" class="form-control" ng-model="register.Email" placeholder="example@example.com" required="">
+                    <p ng-show="signUpForm.Email.$invalid && !signUpForm.Email.$pristine" class="help-block">Enter a valid email.</p>
+                </div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group" ng-class="{ 'has-error' : signUpForm.SecretCode.$invalid && !signUpForm.SecretCode.$pristine }">
+                <label class="text-thin col-xs-5 col-sm-4">Password *</label>
+                <!--<div class="col-sm-8 col-xs-7">
+                    <input type="password" name="password" class="form-control ng-valid-maxlength ng-invalid ng-invalid-minlength" ng-model="register.SecretCode" ng-minlength="3" ng-maxlength="8">
+                    <p ng-show="signUpForm.SecretCode.$error.minlength" class="help-block">Password is too short.</p>
+                    <p ng-show="signUpForm.SecretCode.$error.maxlength" class="help-block">Password is too long.</p>
+                </div>-->
+                <div class="col-sm-8 col-xs-7">
+                    <input type="password" name="SecretCode" class="form-control" ng-model="register.SecretCode" required />
+                    <!-- <input type="password" name="password" class="form-control" ng-model="register.SecretCode" ng-minlength="3" ng-maxlength="8" required="">-->
+                    <p ng-show="signUpForm.SecretCode.$invalid && !signUpForm.SecretCode.$pristine" class="help-block">Password is required.</p>
+                    <!--<p ng-show="signUpForm.SecretCode.$error.minlength" class="help-block">Password is too short.</p>
+                    <p ng-show="signUpForm.SecretCode.$error.maxlength" class="help-block">Password is too long.</p>-->
+                </div>
+            </div>
+            <!-- Confirm Password -->
+            <div class="form-group" ng-class="{ 'has-error' : signUpForm.confirmPassword.$invalid && !signUpForm.confirmPassword.$pristine }">
+                <label class="text-thin col-xs-5 col-sm-4">Confirm Password *</label>
+                <div class="col-sm-8 col-xs-7">
+                    <!--<input type="password" class="form-control" ng-model="register.confirmPassword" placeholder="" required ng-minlength="3" ng-maxlength="8" />-->
+                    <input type="password" class="form-control" name="confirmPassword" ng-model="register.confirmPassword" compare-to="register.SecretCode" required="" />
+                    <p ng-show="signUpForm.confirmPassword.$invalid && !signUpForm.confirmPassword.$pristine" class="help-block">Must match the previous entry.</p>
+                </div>
+            </div>
+            <!-- First Name -->
+            <div class="form-group" ng-class="{ 'has-error' : signUpForm.FirstName.$invalid && !signUpForm.FirstName.$pristine }">
+                <label class="text-thin col-xs-5 col-sm-4">First Name *</label>
+                <div class="col-sm-8 col-xs-7">
+                    <input type="text" class="form-control" name="FirstName" ng-model="register.FirstName" placeholder="" required="" />
+                    <p ng-show="signUpForm.FirstName.$invalid && !signUpForm.FirstName.$pristine" class="help-block">Enter first name.</p>
+                </div>
+            </div>
+            <!-- Last Name -->
+            <div class="form-group">
+                <label class="text-thin col-xs-5 col-sm-4">Last Name</label>
+                <div class="col-sm-8 col-xs-7">
+                    <input type="text" class="form-control" ng-model="register.LastName" placeholder="" />
+                </div>
+            </div>
+            <!-- Contact Number -->
+            <div class="form-group">
+                <label class="text-thin col-xs-5 col-sm-4">Contact Number</label>
+                <div class="col-sm-8 col-xs-7">
+                    <input type="text" class="form-control" ng-model="register.ContactNumber" placeholder="" />
+                </div>
+            </div>
+            <!-- How -->
+            <div class="form-group">
+                <label class="text-thin col-xs-5 col-sm-4">How did you hear about us</label>
+                <div class="col-sm-8 col-xs-7">
+                    <select class="form-control" ng-model="register.hearAboutUs" ng-options="type as type for type in sourceTypes"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 col-sm-offset-4 col-xs-4 col-xs-offset-5">
+                    <button type="submit" class="btn btn-success btn-block" ng-disabled="!signUpForm.$valid">Sign Up</button>
+                </div>
+                <span class="text-danger">{{ registerError }}</span>
+            </div>
+        </form>
+    </div>
+</div>

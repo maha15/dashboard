@@ -1,0 +1,50 @@
+﻿<div class="modal-header">
+    <h5 class="m0 text-thin modal-title">New Component</h5>
+</div>
+<div class="col-xs-12 modal-body" style="color:#4F5256">
+    <div class="col-xs-6">
+        <label for="component.Name" class="m0 text-thin col-xs-12">Name: </label>
+        <input ng-model="component.Name" class="form-control input-sm" placeholder="Component Name" />
+        <br />
+    </div>
+    <div class="col-xs-6">
+        <label for="component.MOQ" class="m0 text-thin col-xs-12">MOQ: </label>
+        <input ng-model="component.MOQ" class="form-control input-sm" type="number" placeholder="Component MOQ" />
+        <br />
+    </div>
+    <div class="col-xs-6">
+        <label for="component.Unit" class="m0 text-thin col-xs-12">Unit: </label>
+        <input ng-model="component.Unit" class="form-control input-sm" placeholder="Component Unit" />
+        <br />
+    </div>
+    <div class="col-xs-6">
+        <label for="component.Cost" class="m0 text-thin col-xs-12">Cost: </label>
+        <input ng-model="component.Cost" class="form-control input-sm" type="number" placeholder="Component Cost" />
+        <br />
+    </div>
+    <div class="col-xs-6">
+        <label for="component.Supplier" class="m0 text-thin col-xs-12">Supplier: </label>
+        <select class="form-control input-sm" ng-options="supplier.Name for supplier in suppliers" ng-model="component.Supplier"></select>
+        <!--<input ng-model="component.Supplier" class="form-control input-sm" placeholder="Component Supplier" />-->
+        <br />
+    </div>
+    <div class="col-xs-6">
+        <label for="component.DeliveryTime" class="m0 text-thin col-xs-12">DeliveryTime </label>
+        <input ng-model="component.DeliveryTime" class="form-control input-sm" placeholder="Component DeliveryTime" />
+        <br />
+    </div>
+    <div class="col-xs-6">
+        <label for="component.CompanyId" class="m0 text-thin col-xs-12">Company: </label>
+        <select class="form-control input-sm" ng-options="company.Name for company in companies" ng-model="component.CompanyId"></select>
+        <br />
+    </div>
+    <div class="col-xs-6">
+        <label for="component.Code" class="m0 text-thin col-xs-12">Code: </label>
+        <input ng-model="component.Code" class="form-control input-sm" placeholder="Component Code" />
+        <br />
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="add()">Add</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>
